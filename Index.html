@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Layout</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* CSS for header section */
+        .header {
+            background-image: url('https://media.tenor.com/39omUT2OvJIAAAAe/tsukihime-ciel.png');
+            background-size: cover;
+            background-position: center;
+            padding: 30px;
+            text-align: center;
+            color: #fff;
+        }
+
+        h2 {
+            color: rgb(221, 16, 16);
+            text-align: center;
+        }
+
+        /* CSS for content section */
+        .row {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .columnA,
+        .columnB {
+            flex: 1;
+            max-width: 45%;
+            margin: 10px;
+            padding: 15px;
+            text-align: justify;
+            background-color: #f2f2f2;
+            border-radius: 10px;
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 600px) {
+            .columnA,
+            .columnB {
+                max-width: 100%;
+            }
+        }
+
+        /* Cleaned up form styles */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        form label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        form input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        form input[type="submit"] {
+            background-color: rgb(221, 16, 16);
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: darkred;
+        }
+
+        /* Menu table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table th,
+        table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        table th {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- header of website layout -->
+    <div class="header">
+        <h2 style="font-size: 2em;">
+            Ahnenerbe Cafe
+        </h2>
+    </div>
+
+    <!-- Content section of website layout -->
+    <div class="row">
+        <div class="columnA">
+            <h2>Reservations Information</h2>
+            <form action="action_page.php" method="get">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="fname" placeholder="Enter your first name" required>
+
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lname" placeholder="Enter your last name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="phoneNum">Phone Number</label>
+                <input type="tel" id="phoneNum" name="PhoneNum" placeholder="Enter your phone number" required>
+
+                <label for="date">Reservation Date</label>
+                <input type="date" id="date" name="reservation_date" required>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+        <div class="columnB">
+            <h2>Menu</h2>
+            <table>
+                <tr>
+                    <th>Category</th>
+                    <th>Item</th>
+                    <th>Description</th>
+                    <th>Price (in Rp)</th>
+                </tr>
+                <tr>
+                    <th rowspan="2">Desserts</th>
+                    <td>Vanilla Ice Cream</td>
+                    <td>Rich and creamy vanilla-flavored ice cream</td>
+                    <td>20k</td>
+                </tr>
+                <tr>
+                    <td>Coffee Pudding</td>
+                    <td>Smooth coffee-flavored pudding with caramel sauce</td>
+                    <td>30k</td>
+                </tr>
+                <tr>
+                    <th rowspan="3">Main Course</th>
+                    <td>Curry Udon</td>
+                    <td>Thick udon noodles served with savory curry sauce</td>
+                    <td>75k</td>
+                </tr>
+                <tr>
+                    <td>Curry Rice</td>
+                    <td>Steamed rice topped with a hearty curry sauce</td>
+                    <td>65k</td>
+                </tr>
+                <tr>
+                    <td>Chicken Katsu</td>
+                    <td>Deep-fried breaded chicken served with tonkatsu sauce</td>
+                    <td>80k</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
